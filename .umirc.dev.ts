@@ -44,6 +44,10 @@ const config: IConfig =  {
     // '@font-size-base': '16px',
     // '@border-color-base': '#2BEAF5'
   },
+  extraBabelPlugins: [
+    'transform-remove-console',
+  ],
+  ignoreMomentLocale: true,
   targets: {
     ie: 11,
   }

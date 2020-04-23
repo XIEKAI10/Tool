@@ -35,7 +35,6 @@ const config: IConfig =  {
       },
     }],
   ],
-  
   hash: true
 }
 
