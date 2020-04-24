@@ -1,17 +1,9 @@
 import { IConfig } from 'umi-types';
-
+const myRouter = require('./config/routerConfig').globalRouters.routes;
 // ref: https://umijs.org/config/
 const config: IConfig =  {
   treeShaking: true,
-  routes: [
-    {
-      path: '/',
-      component: '../layouts/index',
-      routes: [
-        { path: '/', component: '../pages/index' }
-      ]
-    }
-  ],
+  routes: myRouter,
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {

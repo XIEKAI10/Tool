@@ -1,11 +1,12 @@
 exports.globalRouters = {
   routes: [
     {
-      path: '/',
-      component: '../layouts/index',
-      routes: [
-        { path: '/', component: '../pages/index' }
-      ]
-    }
+      exact: true,
+      title: '404',
+      path: '/404',
+      component: './404.js',
+    },
+    { path: '/', component: '../router.js' },
+    { path: '/login', component: '../pages/login/index.tsx' }
   ],
 }
