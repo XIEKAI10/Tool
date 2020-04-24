@@ -7,6 +7,6 @@ exports.globalRouters = {
       component: './404.js',
     },
     { path: '/', component: '../router.js' },
-    { path: '/login', component: '../pages/login/index.tsx' }
+    { path: '/login', component: '../pages/login' }
   ],
 }
