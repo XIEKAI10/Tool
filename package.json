@@ -8,7 +8,7 @@
     "lint": "eslint {src,mock,tests}/**/*.{ts,tsx} --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 umi build",
-    "lint:style": "stylelint src/**/*.less --syntax less"
+    "lint:style": "stylelint src/**/*.{less,css} --syntax less"
   },
   "dependencies": {
     "antd": "^4.1.4",
@@ -47,7 +47,7 @@
       "eslint --fix",
       "git add"
     ],
-    "**/*.less": "npm run lint:style"
+    "**/*.{less.css}": "npm run lint:style"
   },
   "engines": {
     "node": ">=8.0.0"
