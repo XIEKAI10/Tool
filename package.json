@@ -47,7 +47,7 @@
       "eslint --fix",
       "git add"
     ],
-    "**/*.{less.css}": "npm run lint:style"
+    "**/*.{less,css}": "npm run lint:style"
   },
   "engines": {
     "node": ">=8.0.0"
