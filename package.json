@@ -8,7 +8,7 @@
     "lint": "eslint {src,mock,tests}/**/*.{ts,tsx} --fix",
     "precommit": "lint-staged",
     "analyze": "cross-env ANALYZE=1 umi build",
-    "lint:style": "stylelint {src}/**/*.{less} --syntax"
+    "lint:style": "stylelint src/**/*.less --syntax"
   },
   "dependencies": {
     "antd": "^4.1.4",
@@ -47,7 +47,7 @@
       "eslint --fix",
       "git add"
     ],
-    "src/**/*.css" : ["stylelint --syntax", "git add"]
+    "src/**/*.less" : ["stylelint --syntax", "git add"]
   },
   "engines": {
     "node": ">=8.0.0"
