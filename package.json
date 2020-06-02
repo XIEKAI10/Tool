@@ -11,6 +11,7 @@
     "lint:style": "stylelint src/**/*.{less,css} --syntax less"
   },
   "dependencies": {
+    "@umijs/preset-react": "^1.5.5",
     "antd": "^4.1.4",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "dva": "^2.6.0-beta.6",
@@ -34,17 +35,13 @@
     "lint-staged": "^7.2.2",
     "react-test-renderer": "^16.7.0",
     "stylelint": "^13.3.3",
-    "umi": "^2.9.0",
-    "umi-plugin-react": "^1.8.0",
-    "umi-types": "^0.3.0"
+    "umi": "^3.2.3"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix",
       "git add"
     ],
     "*.{js,jsx}": [
-      "eslint --fix",
       "git add"
     ],
     "**/*.{less,css}": "npm run lint:style"
