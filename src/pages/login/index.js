@@ -26,7 +26,6 @@ class Login extends Component {
 
 
   render() {
-    console.log(test)
     return(
       <div className={styles.wrap}>
         <Row justify='center'>
