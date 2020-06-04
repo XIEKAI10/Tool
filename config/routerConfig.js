@@ -7,6 +7,16 @@ exports.globalRouters = {
       component: './404.js',
     },
     { path: '/', component: '../router.js' },
-    { path: '/login', component: '../pages/login' }
+    { path: '/login', component: '../pages/login' },
+    {
+      path: './function',
+      routes: [
+        {
+          title: 'hooks',
+          path: '/function/hooks',
+          component: './function/hooks'
+        }
+      ]
+    }
   ],
 }
