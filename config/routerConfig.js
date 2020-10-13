@@ -14,9 +14,9 @@ exports.globalRouters = {
         {
           title: 'hooks',
           path: '/function/hooks',
-          component: './function/hooks'
-        }
-      ]
-    }
+          component: './function/hooks/index.tsx',
+        },
+      ],
+    },
   ],
-}
+};
