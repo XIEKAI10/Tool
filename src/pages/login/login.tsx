@@ -26,7 +26,10 @@ const Login: React.FC<LoginProps> = (props) => {
    const onFinsh = (values: any) => {
     dispatch({
       type: 'login/submit',
-      payload: values,
+      payload: {
+        sort: 'view_count',
+        time: '2020-09-15,2020-10-14',
+      },
     });
   };
 

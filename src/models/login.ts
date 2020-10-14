@@ -1,3 +1,4 @@
+import { login } from 'src/services/login';
 import { message } from "antd";
 import { history, Reducer, Effect } from 'umi';
 
@@ -25,7 +26,7 @@ const LoginModel: LoginModelType = {
   },
   effects: {
     *submit({ payload }, { call, put }) {
-      // const response = yield call(topicBrand, payload)
+      const response = yield call(login, payload)
       if(payload.name === '12345' && payload.password === '12345') {
         yield put({
           type: 'changeSubmit',
