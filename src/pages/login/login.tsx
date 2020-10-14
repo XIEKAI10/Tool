@@ -1,7 +1,9 @@
 import React, { Fragment } from 'react';
 import { Row, Col, Form, Input, Button } from 'antd';
-import { useDispatch, connect} from 'umi';
+import { useDispatch, connect } from 'umi';
+import { ConnectState } from '@/models/connect';
 import styles from './index.less';
+
 
 
 const layout = {
@@ -12,10 +14,15 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 8 },
 };
 
+interface LoginProps { 
+  loading?: boolean 
+}
 
-const Login = () => { 
+const Login: React.FC<LoginProps> = (props) => { 
   const dispatch = useDispatch();
-   const [form] = Form.useForm();
+  const [form] = Form.useForm();
+  
+  const { loading } = props;
    const onFinsh = (values: any) => {
     dispatch({
       type: 'login/submit',
@@ -50,7 +57,7 @@ const Login = () => {
           <Input.Password />
         </Form.Item>
         <Form.Item {...tailLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button loading={loading} type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>
@@ -58,8 +65,7 @@ const Login = () => {
     </div>
   )
 }
-
-// export default Login;
-export default connect(({ login } : any) => ({
+export default connect(({ login, loading } : ConnectState) => ({
   login,
+  logingLoading: loading.effects['login/login'],
 }))(Login);
