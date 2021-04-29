@@ -1,8 +1,8 @@
-import React from 'react';
 import { Spin } from 'antd';
 import { dynamic } from 'dva';
-import styles from './global.css';
-import { Route, Redirect, Switch } from 'react-router';
+import React from 'react';
+import { Redirect, Route, Switch } from 'react-router';
+import styles from './global.less';
 import NotFound from './pages/404';
 
 dynamic.setDefaultLoadingComponent(() => {

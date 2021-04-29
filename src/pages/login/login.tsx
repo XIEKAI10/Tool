@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
-import { Row, Col, Form, Input, Button } from 'antd';
-import { useDispatch, connect } from 'umi';
 import { ConnectState } from '@/models/connect';
+import { Button, Col, Form, Input, Row } from 'antd';
+import React, { useState } from 'react';
+import { CompactPicker } from 'react-color';
+import { connect, useDispatch } from 'umi';
 import styles from './index.less';
-
-
 
 const layout = {
   labelCol: { span: 8 },
@@ -14,16 +13,17 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 8 },
 };
 
-interface LoginProps { 
-  loading?: boolean 
+interface LoginProps {
+  loading?: boolean;
 }
 
-const Login: React.FC<LoginProps> = (props) => { 
+const Login: React.FC<LoginProps> = (props) => {
   const dispatch = useDispatch();
   const [form] = Form.useForm();
-  
+  const [color, setColor] = useState('#ffffff');
+
   const { loading } = props;
-   const onFinsh = (values: any) => {
+  const onFinsh = (values: any) => {
     dispatch({
       type: 'login/submit',
       payload: {
@@ -36,11 +36,15 @@ const Login: React.FC<LoginProps> = (props) => {
   const onFinishFailed = (error: any) => {
     console.log(error);
   };
+
+  const handleColorChange = (color: any) => {};
+
   return (
     <div className={styles.wrap}>
       <Row justify="center">
         <Col className={styles.login}>Login</Col>
       </Row>
+      <CompactPicker color={color} onChange={handleColorChange} />
       <Form
         className={styles.form}
         {...layout}
@@ -52,11 +56,7 @@ const Login: React.FC<LoginProps> = (props) => {
         <Form.Item label="name" name="name" rules={[{ required: true, message: '12345' }]}>
           <Input />
         </Form.Item>
-        <Form.Item
-          label="password"
-          name="password"
-          rules={[{ required: true, message: '12345' }]}
-        >
+        <Form.Item label="password" name="password" rules={[{ required: true, message: '12345' }]}>
           <Input.Password />
         </Form.Item>
         <Form.Item {...tailLayout}>
@@ -66,9 +66,9 @@ const Login: React.FC<LoginProps> = (props) => {
         </Form.Item>
       </Form>
     </div>
-  )
-}
-export default connect(({ login, loading } : ConnectState) => ({
+  );
+};
+export default connect(({ login, loading }: ConnectState) => ({
   login,
   logingLoading: loading.effects['login/login'],
 }))(Login);
