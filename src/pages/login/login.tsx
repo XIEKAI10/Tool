@@ -1,7 +1,7 @@
 import { ConnectState } from '@/models/connect';
 import { Button, Col, Form, Input, Row } from 'antd';
 import React from 'react';
-import ReactColor from 'src/components/reactColor';
+// import ReactColor from 'src/components/reactColor';
 import { connect, useDispatch } from 'umi';
 import styles from './index.less';
 
@@ -25,10 +25,7 @@ const Login: React.FC<LoginProps> = (props) => {
   const onFinsh = (values: any) => {
     dispatch({
       type: 'login/submit',
-      payload: {
-        sort: 'view_count',
-        time: '2020-09-15,2020-10-14',
-      },
+      payload: { ...values },
     });
   };
 
@@ -41,9 +38,9 @@ const Login: React.FC<LoginProps> = (props) => {
       <Row justify="center">
         <Col className={styles.login}>Login</Col>
       </Row>
-      <div style={{ marginTop: 30 }}>
+      {/* <div style={{ marginTop: 30 }}>
         <ReactColor />
-      </div>
+      </div> */}
       <Form
         className={styles.form}
         {...layout}

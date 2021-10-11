@@ -1,10 +1,9 @@
 import { login } from 'src/services/login';
-import { message } from "antd";
+import { message } from 'antd';
 import { history, Reducer, Effect } from 'umi';
 
-
 export interface StateType {
-  userInfo?: object
+  userInfo?: object;
 }
 
 export interface LoginModelType {
@@ -13,41 +12,41 @@ export interface LoginModelType {
   effects: {
     submit: Effect;
   };
-   reducers: {
+  reducers: {
     changeSubmit: Reducer<StateType>;
   };
 }
 
-
 const LoginModel: LoginModelType = {
   namespace: 'login',
   state: {
-    userInfo: {}
+    userInfo: {},
   },
   effects: {
     *submit({ payload }, { call, put }) {
-      const response = yield call(login, payload)
-      if(payload.name === '12345' && payload.password === '12345') {
+      console.log(payload);
+      const response = yield call(login, payload);
+      if (payload.name === '12345' && payload.password === '12345') {
         yield put({
           type: 'changeSubmit',
           payload: {
             name: 'xk',
-            access: 'admin'
-          }
-        })
-      }else {
-        message.error('账号错误')
+            access: 'admin',
+          },
+        });
+      } else {
+        message.error('账号错误');
       }
-    }
+    },
   },
   reducers: {
     changeSubmit(state, { payload }) {
       return {
         ...state,
-        userInfo: payload
-      }
-    }
-  }
-}
+        userInfo: payload,
+      };
+    },
+  },
+};
 
 export default LoginModel;
