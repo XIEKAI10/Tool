@@ -1,8 +1,8 @@
-import antdThemeWebpackPlugin from 'antd-theme-webpack-plugin';
 import path from 'path';
+const AntDesignThemePlugin = require('antd-theme-webpack-plugin');
 
 export default (config) => {
-  config.plugin('ant-design-theme').use(antdThemeWebpackPlugin, [
+  config.plugin('ant-design-theme').use(AntDesignThemePlugin, [
     {
       antDir: path.join(__dirname, '../node_modules/antd'), // antd包位置
       stylesDir: path.join(__dirname, '../src'), // 指定皮肤文件夹
