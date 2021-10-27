@@ -30,6 +30,7 @@ class ReactColor extends React.Component {
           });
         })
         .catch((error) => {
+          console.log(error);
           message.error('Failed to update theme');
         });
     }, 200);

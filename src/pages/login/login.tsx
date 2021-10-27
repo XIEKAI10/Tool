@@ -2,7 +2,7 @@ import { ConnectState } from '@/models/connect';
 import { Button, Col, Form, Input, Row } from 'antd';
 import React from 'react';
 import { UserOutlined } from '@ant-design/icons';
-// import ReactColor from 'src/components/reactColor';
+import ReactColor from 'src/components/reactColor';
 import { connect, useDispatch } from 'umi';
 import styles from './index.less';
 
@@ -36,9 +36,9 @@ const Login: React.FC<LoginProps> = (props) => {
 
   return (
     <div className={styles.wrap}>
-      {/* <div style={{ marginTop: 30 }}>
+      <div>
         <ReactColor />
-      </div> */}
+      </div>
       <div style={{ height: 80 }}></div>
       <div className={styles.loginBox}>
         <Row justify="center" className={styles.login}>

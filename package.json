@@ -14,6 +14,7 @@
     "@types/react-color": "^3.0.4",
     "@umijs/preset-react": "^1.6.10",
     "antd": "^4.1.4",
+    "antd-theme-generator": "^1.2.10",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "caniuse-lite": "^1.0.30001219",
     "dva": "^2.6.0-beta.6",
