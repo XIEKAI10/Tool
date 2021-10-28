@@ -21,16 +21,14 @@ class ReactColor extends React.Component {
       window.less
         .modifyVars({
           '@primary-color': color.hex,
-          '@fontColor': color.hex,
+          // '@fontColor': color.hex,
         })
         .then(() => {
-          console.log(window.less);
           this.setState({
             color: color.hex,
           });
         })
         .catch((error) => {
-          console.log(error);
           message.error('Failed to update theme');
         });
     }, 200);

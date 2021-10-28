@@ -22,7 +22,7 @@ export default defineConfig({
   // runtimePublicPath:true,
   // publicPath:'https://abcd/develop/',  //示例链接 此处替换发布环境
   routes: myRouter,
-  // chainWebpack: webpackplugin,
+  chainWebpack: webpackplugin,
   // mfsu: {}, // 加快热更新速度 版本需要3.5.0以上
   cssLoader: {},
   ignoreMomentLocale: true,
