@@ -24,9 +24,14 @@ class ReactColor extends React.Component {
           // '@fontColor': color.hex,
         })
         .then(() => {
-          this.setState({
-            color: color.hex,
-          });
+          this.setState(
+            {
+              color: color.hex,
+            },
+            () => {
+              console.log(this.state.color);
+            },
+          );
         })
         .catch((error) => {
           message.error('Failed to update theme');

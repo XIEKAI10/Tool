@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "umi dev",
+    "start": "node color && umi dev",
     "build": "cross-env UMI_ENV=dev umi build",
     "product": "cross-env UMI_ENV=product umi build",
     "test": "umi test",
