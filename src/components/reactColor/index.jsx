@@ -17,26 +17,43 @@ class ReactColor extends React.Component {
   };
 
   handleChange = (color) => {
-    setTimeout(() => {
-      window.less
-        .modifyVars({
-          '@primary-color': color.hex,
-          // '@fontColor': color.hex,
-        })
-        .then(() => {
-          this.setState(
-            {
-              color: color.hex,
-            },
-            () => {
-              console.log(this.state.color);
-            },
-          );
-        })
-        .catch((error) => {
-          message.error('Failed to update theme');
+    window.less
+      .modifyVars({
+        '@primary-color': color.hex,
+        '@btn-primary-bg': color.hex,
+        '@text-color': color.hex,
+      })
+      .then(() => {
+        // console.log(color.hex);
+        // document.body.style.setProperty('@primary-color', color.hex);
+        this.setState({
+          color: color.hex,
         });
-    }, 200);
+      })
+      .catch((error) => {
+        message.error('Failed to update theme');
+      });
+
+    // setTimeout(() => {
+    //   window.less
+    //     .modifyVars({
+    //       '@primary-color': color.hex,
+    //       // '@fontColor': color.hex,
+    //     })
+    //     .then(() => {
+    //       this.setState(
+    //         {
+    //           color: color.hex,
+    //         },
+    //         () => {
+    //           console.log(this.state.color);
+    //         },
+    //       );
+    //     })
+    //     .catch((error) => {
+    //       message.error('Failed to update theme');
+    //     });
+    // }, 200);
   };
 
   render() {
