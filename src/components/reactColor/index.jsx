@@ -8,6 +8,15 @@ class ReactColor extends React.Component {
     color: '#ffffff',
   };
 
+  componentDidMount() {
+    const themeColor = localStorage.getItem('theme');
+    if (themeColor) {
+      let color = {};
+      color.hex = themeColor;
+      this.handleChange(color);
+    }
+  }
+
   handleClick = () => {
     this.setState({ displayColorPicker: !this.state.displayColorPicker });
   };
@@ -24,36 +33,18 @@ class ReactColor extends React.Component {
         '@text-color': color.hex,
       })
       .then(() => {
-        // console.log(color.hex);
-        // document.body.style.setProperty('@primary-color', color.hex);
-        this.setState({
-          color: color.hex,
-        });
+        this.setState(
+          {
+            color: color.hex,
+          },
+          () => {
+            localStorage.setItem('theme', color.hex);
+          },
+        );
       })
       .catch((error) => {
         message.error('Failed to update theme');
       });
-
-    // setTimeout(() => {
-    //   window.less
-    //     .modifyVars({
-    //       '@primary-color': color.hex,
-    //       // '@fontColor': color.hex,
-    //     })
-    //     .then(() => {
-    //       this.setState(
-    //         {
-    //           color: color.hex,
-    //         },
-    //         () => {
-    //           console.log(this.state.color);
-    //         },
-    //       );
-    //     })
-    //     .catch((error) => {
-    //       message.error('Failed to update theme');
-    //     });
-    // }, 200);
   };
 
   render() {
