@@ -1,6 +1,6 @@
 declare module '*.css';
 declare module '*.png';
 declare module '*.less';
-declare interface window {
+declare interface Window {
   less: any;
 }
