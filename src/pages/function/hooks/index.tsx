@@ -13,6 +13,13 @@ function Example() {
     // document.title = (count as unknown) as string;
 
     (document as any).title = count;
+    function changeArr<t>(args: t[]): t[] {
+      let arr = [];
+      for (let i = 0; i < args.length; i++) {
+        arr.push(args[i]);
+      }
+      return arr;
+    }
   });
 
   return (

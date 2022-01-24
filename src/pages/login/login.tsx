@@ -63,7 +63,7 @@ const Login: React.FC<LoginProps> = (props) => {
             <Input.Password />
           </Form.Item>
           <Row>
-            <Col span={8} push={8} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Col span={16} push={8} style={{ display: 'flex', justifyContent: 'center' }}>
               <Form.Item>
                 <Button loading={loading} type="primary" htmlType="submit">
                   Submit

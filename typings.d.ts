@@ -1,6 +1,7 @@
 declare module '*.css';
 declare module '*.png';
 declare module '*.less';
+declare module 'antd-theme-webpack-plugin';
 declare interface Window {
   less: any;
 }

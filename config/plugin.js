@@ -1,5 +1,6 @@
 import path from 'path';
-const AntdThemeWebpackplugin = require('antd-theme-webpack-plugin');
+import AntdThemeWebpackplugin from 'antd-theme-webpack-plugin';
+// const AntdThemeWebpackplugin = require('antd-theme-webpack-plugin');
 
 export default (config) => {
   config.plugin('ant-design-theme').use(AntdThemeWebpackplugin, [
