@@ -1,6 +1,7 @@
 import { message } from 'antd';
 import React from 'react';
 import { SketchPicker } from 'react-color';
+import bg from '../../assets/yay.jpg';
 
 class ReactColor extends React.Component {
   state = {
@@ -13,7 +14,7 @@ class ReactColor extends React.Component {
     if (themeColor) {
       let color = {};
       color.hex = themeColor;
-      this.handleChange(color);
+      // this.handleChange(color);
     }
   }
 
@@ -38,6 +39,8 @@ class ReactColor extends React.Component {
             color: color.hex,
           },
           () => {
+            document.body.style.setProperty('--show', color.hex);
+            document.body.style.setProperty('--url', `url(${bg})`);
             localStorage.setItem('theme', color.hex);
           },
         );
