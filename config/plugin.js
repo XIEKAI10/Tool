@@ -10,7 +10,7 @@ export default (config) => {
       varFile: path.join(__dirname, '../src/variable.less'), // 自己设置默认的主题色
       indexFileName: '../src/pages/document.ejs',
       outputFilePath: path.join(__dirname, '../color.less'), // 输出到什么地方
-      lessUrl: 'https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js',
+      lessUrl: 'https://cdn.bootcdn.net/ajax/libs/less.js/3.7.0/less.min.js',
       themeVariables: [
         // 这里写要改变的主题变量
         '@primary-color',
